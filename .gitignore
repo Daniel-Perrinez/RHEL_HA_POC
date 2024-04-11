@@ -1,0 +1,26 @@
+# Ignore working ansible files
+VMware_RHEL_playbook/ansible.cfg
+VMware_RHEL_playbook/inventory.yaml
+
+# Make sure to NOT accidentally check in customer notes
+customer_notes.txt
+
+# Local .terraform directories
+**/.terraform/*
+*.terraform.*
+
+# Ignore all .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Ignore all .pem files
+rhel-key
+*.pub
+*.pem
+
+# We need to commit .tfstate files for: Ansible_POC/AWS_RHEL_Remote_Backend
+# Exclude the specific directory and its .tfstate files
+!Ansible_POC/AWS_RHEL_Remote_Backend/*.tfstate
+!Ansible_POC/AWS_RHEL_Remote_Backend/*.tfstate.*
+
+.DS_Store
