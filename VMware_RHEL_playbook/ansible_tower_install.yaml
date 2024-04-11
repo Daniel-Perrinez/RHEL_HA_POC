@@ -1,0 +1,28 @@
+--- 
+  - name: ansible_play
+    hosts: VMWare_RHEL_8_9
+    connection: local
+
+    tasks:
+      # - name: Update all packages using yum
+      #   shell: yum -y update
+      #   become: true
+      
+      - name: Check nameservers
+        shell: |
+          cat /etc/resolv.conf  > /dev/null
+        register: result
+
+      - name: Test Echo
+        shell: |
+          echo "------- wow -------"  > /dev/null
+        # shell: |
+        #   hostnamectl set-hostname RHEL_8.9_HA_04_02_2024
+        register: result
+        # become: true
+      
+      - name: Display the output
+        debug:
+          msg: "{{ result.stdout_lines }}"
+          
+
