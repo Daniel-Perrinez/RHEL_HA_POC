@@ -25,5 +25,15 @@ High Availability Add-On
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 
-1. Download RHEL 8.9 here:
+0. Download RHEL 8.9 here:
 https://access.redhat.com/downloads/content/rhel
+
+1. Must manually register:
+ - hostnamectl set-hostname RHEL_8.9_HA_1-04-12-2024
+ - sudo su -
+ - sudo systemctl restart NetworkManage
+ - subscription-manager clean
+ - subscription-manager register --username=<Red Hat Org Admin Login*> 
+ =
+Confirm registration here:
+https://access.redhat.com/management/systems
